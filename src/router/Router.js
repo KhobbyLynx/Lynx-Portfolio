@@ -14,11 +14,11 @@ import { useLayout } from '@hooks/useLayout'
 import { getUserData, getHomeRouteForLoggedInUser } from '../utility/Utils'
 
 // ** GetRoutes
-import { getRoutes } from './routes'
+import { DefaultRoute, getRoutes } from './routes'
 
 // ** Components
 const Error = lazy(() => import('../views/pages/misc/Error'))
-const Login = lazy(() => import('../views/pages/authentication/Login'))
+const Login = lazy(() => import('../views/pages/authentication/LoginBasic'))
 const NotAuthorized = lazy(() => import('../views/pages/misc/NotAuthorized'))
 
 const Router = () => {
@@ -31,7 +31,7 @@ const Router = () => {
     if (user) {
       return getHomeRouteForLoggedInUser(user.role)
     } else {
-      return '/login'
+      return DefaultRoute
     }
   }
 
@@ -39,24 +39,24 @@ const Router = () => {
     {
       path: '/',
       index: true,
-      element: <Navigate replace to={getHomeRoute()} />
+      element: <Navigate replace to={getHomeRoute()} />,
     },
     {
       path: '/login',
       element: <BlankLayout />,
-      children: [{ path: '/login', element: <Login /> }]
+      children: [{ path: '/login', element: <Login /> }],
     },
     {
       path: '/auth/not-auth',
       element: <BlankLayout />,
-      children: [{ path: '/auth/not-auth', element: <NotAuthorized /> }]
+      children: [{ path: '/auth/not-auth', element: <NotAuthorized /> }],
     },
     {
       path: '*',
       element: <BlankLayout />,
-      children: [{ path: '*', element: <Error /> }]
+      children: [{ path: '*', element: <Error /> }],
     },
-    ...allRoutes
+    ...allRoutes,
   ])
 
   return routes

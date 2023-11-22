@@ -4,18 +4,6 @@ import { createSlice } from '@reduxjs/toolkit'
 // ** ThemeConfig Import
 import themeConfig from '@configs/themeConfig'
 
-const initialMenuCollapsed = () => {
-  const item = window.localStorage.getItem('menuCollapsed')
-  //** Parse stored json or if none return initialValue
-  return item ? JSON.parse(item) : themeConfig.layout.menu.isCollapsed
-}
-
-const initialDirection = () => {
-  const item = window.localStorage.getItem('direction')
-  //** Parse stored json or if none return initialValue
-  return item ? JSON.parse(item) : themeConfig.layout.isRTL
-}
-
 const initialSkin = () => {
   const item = window.localStorage.getItem('skin')
   //** Parse stored json or if none return initialValue
@@ -26,20 +14,19 @@ export const layoutSlice = createSlice({
   name: 'layout',
   initialState: {
     skin: initialSkin(),
-    isRTL: initialDirection(),
+    isRTL: themeConfig.layout.isRTL,
     layout: themeConfig.layout.type,
     lastLayout: themeConfig.layout.type,
-    menuCollapsed: initialMenuCollapsed(),
+    menuCollapsed: themeConfig.layout.menu.isCollapsed,
     footerType: themeConfig.layout.footer.type,
     navbarType: themeConfig.layout.navbar.type,
     menuHidden: themeConfig.layout.menu.isHidden,
     contentWidth: themeConfig.layout.contentWidth,
-    navbarColor: themeConfig.layout.navbar.backgroundColor
+    navbarColor: themeConfig.layout.navbar.backgroundColor,
   },
   reducers: {
     handleRTL: (state, action) => {
       state.isRTL = action.payload
-      window.localStorage.setItem('direction', JSON.stringify(action.payload))
     },
     handleSkin: (state, action) => {
       state.skin = action.payload
@@ -68,9 +55,8 @@ export const layoutSlice = createSlice({
     },
     handleMenuCollapsed: (state, action) => {
       state.menuCollapsed = action.payload
-      window.localStorage.setItem('menuCollapsed', JSON.stringify(action.payload))
-    }
-  }
+    },
+  },
 })
 
 export const {
@@ -83,7 +69,7 @@ export const {
   handleFooterType,
   handleNavbarColor,
   handleContentWidth,
-  handleMenuCollapsed
+  handleMenuCollapsed,
 } = layoutSlice.actions
 
 export default layoutSlice.reducer

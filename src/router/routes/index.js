@@ -2,15 +2,9 @@
 import { Fragment } from 'react'
 
 // ** Routes Imports
+import Portfolio from './Portfolio'
 import AppRoutes from './Apps'
-import FormRoutes from './Forms'
 import PagesRoutes from './Pages'
-import TablesRoutes from './Tables'
-import ChartsRoutes from './Charts'
-import DashboardRoutes from './Dashboards'
-import UiElementRoutes from './UiElements'
-import ExtensionsRoutes from './Extensions'
-import PageLayoutsRoutes from './PageLayouts'
 import AuthenticationRoutes from './Authentication'
 
 // ** Layouts
@@ -33,23 +27,17 @@ const getLayout = {
 }
 
 // ** Document title
-const TemplateTitle = '%s - Lynx DS'
+const TemplateTitle = '%s - Lynx - Developer'
 
 // ** Default Route
-const DefaultRoute = '/dashboard/ecommerce'
+const DefaultRoute = '/me'
 
 // ** Merge Routes
 const Routes = [
   ...AuthenticationRoutes,
-  ...DashboardRoutes,
+  ...Portfolio,
   ...AppRoutes,
   ...PagesRoutes,
-  ...UiElementRoutes,
-  ...ExtensionsRoutes,
-  ...PageLayoutsRoutes,
-  ...FormRoutes,
-  ...TablesRoutes,
-  ...ChartsRoutes,
 ]
 
 const getRouteMeta = (route) => {

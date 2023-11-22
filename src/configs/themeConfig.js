@@ -9,11 +9,11 @@ const themeConfig = {
   },
   layout: {
     isRTL: false,
-    skin: 'dark', // light, dark, bordered, semi-dark
-    type: 'vertical', // vertical, horizontal
+    skin: 'light', // light, dark, bordered, semi-dark
+    type: 'horizontal', // vertical, horizontal
     contentWidth: 'boxed', // full, boxed
     menu: {
-      isHidden: false,
+      isHidden: true,
       isCollapsed: false,
     },
     navbar: {
@@ -24,7 +24,7 @@ const themeConfig = {
     footer: {
       type: 'static', // static, sticky, hidden
     },
-    customizer: true,
+    customizer: false,
     scrollTop: true, // Enable scroll to top button
     toastPosition: 'top-right', // top-left, top-center, top-right, bottom-left, bottom-center, bottom-right
   },
