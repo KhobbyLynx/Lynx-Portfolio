@@ -1,50 +1,43 @@
-// ** React Imports
-import { useEffect, useState } from 'react'
+// ** MUI Imports
+import Zoom from '@mui/material/Zoom'
+import { styled } from '@mui/material/styles'
+import useScrollTrigger from '@mui/material/useScrollTrigger'
 
-// ** Third Party Components
-import Proptypes from 'prop-types'
+const ScrollToTopStyled = styled('div')(({ theme }) => ({
+  zIndex: 11,
+  position: 'fixed',
+  right: theme.spacing(6),
+  bottom: theme.spacing(10),
+}))
 
-const ScrollTop = props => {
+const ScrollToTop = (props) => {
   // ** Props
-  const { showOffset, scrollBehaviour, children, ...rest } = props
+  const { children, className } = props
 
-  // ** State
-  const [visible, setVisible] = useState(false)
+  // ** init trigger
+  const trigger = useScrollTrigger({
+    threshold: 400,
+    disableHysteresis: true,
+  })
 
-  useEffect(() => {
-    if (window) {
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset >= showOffset) {
-          setVisible(true)
-        } else {
-          setVisible(false)
-        }
-      })
+  const handleClick = () => {
+    const anchor = document.querySelector('body')
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: 'smooth' })
     }
-  }, [])
-
-  const handleScrollToTop = () => {
-    window.scroll({ top: 0, behavior: scrollBehaviour })
   }
 
   return (
-    visible && (
-      <div className='scroll-to-top' onClick={handleScrollToTop} {...rest}>
+    <Zoom in={trigger}>
+      <ScrollToTopStyled
+        className={className}
+        onClick={handleClick}
+        role='presentation'
+      >
         {children}
-      </div>
-    )
+      </ScrollToTopStyled>
+    </Zoom>
   )
 }
 
-export default ScrollTop
-
-// ** PropTypes
-ScrollTop.propTypes = {
-  showOffset: Proptypes.number,
-  children: Proptypes.any.isRequired,
-  scrollBehaviour: Proptypes.oneOf(['smooth', 'instant', 'auto'])
-}
-
-ScrollTop.defaultProps = {
-  scrollBehaviour: 'smooth'
-}
+export default ScrollToTop
