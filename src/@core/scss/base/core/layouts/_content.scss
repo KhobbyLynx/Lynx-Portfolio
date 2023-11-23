@@ -321,7 +321,9 @@ html {
 
     // horizontal layout
     &.horizontal-layout {
+      padding: 0 40px !important;
       .header-navbar {
+        padding: 16px 40px !important;
         width: 100% !important;
       }
       .app-content {

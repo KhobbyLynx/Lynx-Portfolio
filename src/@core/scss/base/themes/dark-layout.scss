@@ -127,8 +127,9 @@
   }
   .navbar-sticky {
     .header-navbar {
-      &.navbar-shadow {
-        box-shadow: 0 4px 24px 0 rgba($black, 0.75);
+      &.navbar-scrollBg {
+        background-color: #141414 !important;
+        transition: all 0.3s ease;
       }
     }
   }

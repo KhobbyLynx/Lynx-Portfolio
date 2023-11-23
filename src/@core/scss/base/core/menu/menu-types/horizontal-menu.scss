@@ -27,7 +27,7 @@
   // Navbar container spacing for all
   .navbar.header-navbar {
     .navbar-container {
-      padding: 0.8rem #{$content-padding};
+      padding: 0 #{$content-padding};
     }
   }
 
@@ -84,8 +84,6 @@
     }
     &.navbar-brand-center {
       .navbar-header {
-        position: absolute;
-        left: calc(50% - 56px); // left 50% - branding width
         padding: 0;
         z-index: 1000;
         .navbar-brand {
@@ -94,16 +92,17 @@
           margin-right: 0;
           font-size: inherit;
           .brand-logo img {
-            max-width: 36px;
+            max-width: 30px;
           }
 
           // Brand Text Scss
           .brand-text {
-            color: $primary;
+            color: $theme-dark-headings-color;
             padding-left: 1rem;
             margin-bottom: 0;
+            font-family: $font-family-sans-serif;
             font-weight: 600;
-            letter-spacing: 0.01rem;
+            letter-spacing: 0.06rem;
             font-size: 1.45rem;
           }
         }

@@ -140,10 +140,15 @@ $component-active-bg: $primary !default;
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: "Open sans", "Montserrat", Helvetica, Arial, serif !default;
-$font-family-monospace: "Open sans", "Montserrat", Helvetica, Arial, serif !default;
+$font-family-sans-serif:
+  "Open sans",
+  Arial,
+  sans serif !default;
+$font-family-monospace:
+  "Poppins",
+  san serif !default;
 .ok {
-  font-family: monospace;
+  font-family: "Poppins", monospace;
 }
 
 // stylelint-enable value-keyword-case

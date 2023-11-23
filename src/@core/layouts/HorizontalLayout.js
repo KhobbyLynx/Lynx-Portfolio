@@ -75,10 +75,10 @@ const HorizontalLayout = (props) => {
   useEffect(() => {
     setIsMounted(true)
     window.addEventListener('scroll', function () {
-      if (window.pageYOffset > 65 && navbarScrolled === false) {
+      if (window.pageYOffset > 10 && navbarScrolled === false) {
         setNavbarScrolled(true)
       }
-      if (window.pageYOffset < 65) {
+      if (window.pageYOffset < 10) {
         setNavbarScrolled(false)
       }
     })
@@ -124,28 +124,13 @@ const HorizontalLayout = (props) => {
         expand='lg'
         container={false}
         className={classnames(
-          'header-navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center',
+          'header-navbar navbar-fixed align-items-center navbar-brand-center',
           {
-            'navbar-scrolled': navbarScrolled,
+            'navbar-scrolled navbar-scrollBg': navbarScrolled,
           }
         )}
       >
-        {!navbar && (
-          <div className='navbar-header d-xl-block d-none'>
-            <ul className='nav navbar-nav'>
-              <NavItem>
-                <Link to='/' className='navbar-brand'>
-                  <span className='brand-logo'>
-                    <img src={themeConfig.app.appLogoImage} alt='logo' />
-                  </span>
-                  <h2 className='brand-text mb-0'>{themeConfig.app.appName}</h2>
-                </Link>
-              </NavItem>
-            </ul>
-          </div>
-        )}
-
-        <div className='navbar-container d-flex content'>
+        <div className='navbar-container d-flex align-items-center'>
           {navbar ? (
             navbar({ skin, setSkin })
           ) : (
@@ -180,28 +165,7 @@ const HorizontalLayout = (props) => {
       ) : null}
 
       {children}
-      {themeConfig.layout.customizer === true ? (
-        <Customizer
-          skin={skin}
-          isRtl={isRtl}
-          layout={layout}
-          setSkin={setSkin}
-          setIsRtl={setIsRtl}
-          isHidden={isHidden}
-          setLayout={setLayout}
-          footerType={footerType}
-          navbarType={navbarType}
-          setIsHidden={setIsHidden}
-          themeConfig={themeConfig}
-          navbarColor={navbarColor}
-          contentWidth={contentWidth}
-          setFooterType={setFooterType}
-          setNavbarType={setNavbarType}
-          setLastLayout={setLastLayout}
-          setNavbarColor={setNavbarColor}
-          setContentWidth={setContentWidth}
-        />
-      ) : null}
+
       <footer
         className={classnames(
           `footer footer-light ${footerClasses[footerType] || 'footer-static'}`,

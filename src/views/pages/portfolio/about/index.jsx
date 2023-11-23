@@ -2,7 +2,7 @@
 import React from 'react'
 
 const About = () => {
-  return <div>Learn more about me here</div>
+  return <div style={{ height: '1200vh' }}>Learn more about me here</div>
 }
 
 export default About
