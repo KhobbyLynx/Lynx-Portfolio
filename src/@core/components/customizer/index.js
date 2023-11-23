@@ -97,22 +97,6 @@ const Customizer = (props) => {
     })
   }
 
-  // // ** Render Navbar Colors Options
-  // const renderNavbarColors = () => {
-  //   const colorsArr = ['white', 'primary', 'secondary', 'success', 'danger', 'info', 'warning', 'dark']
-
-  //   return colorsArr.map(color => (
-  //     <li
-  //       key={color}
-  //       className={classnames(`color-box bg-${color}`, {
-  //         selected: navbarColor === color,
-  //         border: color === 'white'
-  //       })}
-  //       onClick={() => setNavbarColor(color)}
-  //     ></li>
-  //   ))
-  // }
-
   // ** Render Navbar Type Options
   const renderNavbarTypeRadio = () => {
     const navbarTypeArr = [
