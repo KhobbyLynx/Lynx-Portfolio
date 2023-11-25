@@ -3,11 +3,12 @@ import React from 'react'
 
 // ** Testimonials
 import Testimonials from './Testimonials'
+import Hero from './Hero'
 
 const index = () => {
   return (
     <div>
-      I love coding
+      <Hero />
       <Testimonials />
     </div>
   )

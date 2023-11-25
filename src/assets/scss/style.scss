@@ -40,25 +40,24 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 	}
 }
 // ** Logo Styles
-// .navbar-brand {
-// 	display: flex;
-// 	align-items: center;
-// 	margin-right: 0;
-// 	font-size: inherit;
-// 	.brand-logo img {
-// 		max-width: 36px;
-// 	}
+.navbar-brand {
+	display: flex;
+	align-items: center;
+	margin-right: 0;
+	font-size: inherit;
+	.brand-logo img {
+		max-width: 30px;
+	}
 
-// 	// Brand Text Scss
-// 	.brand-text {
-// 		color: #f37216;
-// 		padding-left: 1rem;
-// 		margin-bottom: 0;
-// 		font-weight: 600;
-// 		letter-spacing: 0.01rem;
-// 		font-size: 1.45rem;
-// 	}
-// }
+	// Brand Text Scss
+	.brand-text {
+		padding-left: 1rem;
+		margin-bottom: 0;
+		font-weight: 600;
+		letter-spacing: 0.01rem;
+		font-size: 1.45rem;
+	}
+}
 
 // ** hover buttons style
 // main navbar and header navbar shadow(generic navbar)

@@ -173,7 +173,7 @@ const VerticalLayout = (props) => {
           } navbar-shadow`
         )}
       >
-        <div className='navbar-container d-flex content'>
+        <div className='navbar-container d-flex align-items-center'>
           {navbar ? (
             navbar({ skin, setSkin, setMenuVisibility })
           ) : (

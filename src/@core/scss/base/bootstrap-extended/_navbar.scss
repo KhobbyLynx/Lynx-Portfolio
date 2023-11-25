@@ -111,6 +111,7 @@
     // Added more horizontal padding above small screen
     @include media-breakpoint-up(sm) {
       padding: 0.8rem 1.4rem;
+      background-color: $gray-800;
     }
     flex-basis: 100%;
     transition: 300ms ease all;
@@ -416,10 +417,10 @@
 
 // Navbar colors
 .navbar-light {
-  background: $white;
+  background: $gray-800;
 
   &.navbar-horizontal {
-    background: $white;
+    background: $gray-800;
   }
 
   .navbar-nav {
@@ -524,43 +525,43 @@
     }
   }
 
-  // dark navbar
-  .navbar-dark {
-    .navbar-header {
-      .navbar-nav {
-        .nav-link {
-          color: $white;
-        }
-      }
-    }
+  // // dark navbar
+  // .navbar-dark {
+  //   .navbar-header {
+  //     .navbar-nav {
+  //       .nav-link {
+  //         color: $white;
+  //       }
+  //     }
+  //   }
 
-    .navbar-container {
-      .navbar-nav {
-        .nav-link {
-          color: $gray-600;
-        }
-      }
-    }
-  }
+  //   .navbar-container {
+  //     .navbar-nav {
+  //       .nav-link {
+  //         color: $gray-600;
+  //       }
+  //     }
+  //   }
+  // }
 
-  // light navbar
-  .navbar-light {
-    .navbar-header {
-      .navbar-nav {
-        .nav-link {
-          color: $gray-600;
-        }
-      }
-    }
+  // // light navbar
+  // .navbar-light {
+  //   .navbar-header {
+  //     .navbar-nav {
+  //       .nav-link {
+  //         color: $gray-600;
+  //       }
+  //     }
+  //   }
 
-    .navbar-container {
-      .navbar-nav {
-        .nav-link {
-          color: $gray-600;
-        }
-      }
-    }
-  }
+  //   .navbar-container {
+  //     .navbar-nav {
+  //       .nav-link {
+  //         color: $gray-600;
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 // For Medium and down: iPad support for navbr

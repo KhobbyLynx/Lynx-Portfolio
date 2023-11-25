@@ -12,7 +12,8 @@ const AppRoutes = [
     element: <Home />,
     path: '/me',
     meta: {
-      // className: 'ecommerce-application',
+      // appLayout: true,
+      // className: 'email-application',
     },
   },
   {
